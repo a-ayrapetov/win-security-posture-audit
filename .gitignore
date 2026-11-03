@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+.venv/
+venv/
+.env
+*.log
+Outputs/
+output/
+inventory*.csv
+!inventory.sample.csv
