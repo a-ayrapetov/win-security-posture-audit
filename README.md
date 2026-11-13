@@ -2,6 +2,19 @@
 
 A read-only PowerShell audit of a Windows 10/11 machine's security and health posture. Run it on a new or inherited PC to see what you are dealing with before you trust it.
 
+## When to run it
+
+```mermaid
+flowchart LR
+  R([New or inherited<br/>Windows PC]) --> T[Run Audit-NewPC.ps1<br/>as Administrator] --> D1{DP 1}
+  D1 -->|gaps found| P[Work through the<br/>fix plan by hand] --> T
+  D1 -->|clean| G([In service])
+
+  style R fill:#1f6feb,color:#fff,stroke:none
+  style D1 fill:#6e40c9,color:#fff,stroke:none
+  style G fill:#1a7f37,color:#fff,stroke:none
+```
+
 ## What it checks
 
 - TPM, Secure Boot, virtualization-based security, Windows activation
