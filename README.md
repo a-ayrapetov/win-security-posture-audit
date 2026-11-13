@@ -15,6 +15,8 @@ A read-only PowerShell audit of a Windows 10/11 machine's security and health po
 
 Read-only. The script never runs Set-, Remove-, Stop- or Disable- commands against the system. It only writes a report folder to your Desktop, including a `DEGARBAGE-PLAN.md` of suggested fixes that it does not apply. It does not open cloud file contents (no OneDrive or Dropbox hydration).
 
+CI enforces this on every push: a lint job fails on any PSScriptAnalyzer error, and a Pester test parses the script and fails on any state-changing command outside a short, commented allowlist. A second test proves the guard catches `Set-ItemProperty` and `Remove-Item` in a sample script.
+
 ## Usage
 
 Open Terminal as Administrator for the fullest results, then:
